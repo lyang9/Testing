@@ -1,6 +1,12 @@
 /* eslint-disable arrow-parens */
 
 const multiplyByTen = num => {
+  if (!num) {
+    return 0;
+  }
+  if (typeof num === 'string') {
+    throw new Error('value must be a number');
+  }
   return num * 10;
 };
 
@@ -31,6 +37,9 @@ const greaterThanFifty = num => {
 };
 
 const add = (x, y) => {
+  if (!x || typeof x === 'string' || !y || typeof y === 'string') {
+    return 0;
+  }
   return x + y;
 };
 
